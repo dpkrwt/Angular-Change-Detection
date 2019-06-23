@@ -2,7 +2,7 @@
 // tslint:disable:component-class-suffix
 
 import {Component} from '@angular/core';
-import {Subject} from 'rxjs/Rx';
+import {Subject} from 'rxjs';
 
 @Component({
     selector: 'on-push-cd-observables',
@@ -18,7 +18,7 @@ import {Subject} from 'rxjs/Rx';
         </ol>
 
         <div>
-            <button class="trigger" (click)="null">Trigger Change Detection</button>
+            <button class="trigger" (click)="null" style="margin-right: 2em">Trigger Change Detection</button>
             <button class="trigger" (click)="emitAndTriggerChangeDetection()">Push to Cmp17</button>
         </div>
         <div class="tree">

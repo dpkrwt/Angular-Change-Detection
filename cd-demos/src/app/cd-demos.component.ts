@@ -1,12 +1,12 @@
 // tslint:disable:component-selector
 
-import {AfterViewChecked, Component, ViewChild, ViewEncapsulation} from '@angular/core';
-import {Subject} from 'rxjs/Rx';
+import { AfterViewChecked, Component, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import {DefaultChangeDetectionComponent} from './default-change-detection';
-import {OnPushChangeDetectionComponent} from './on-push-change-detection';
-import {OnPushChangeDetectionObservablesComponent} from './on-push-change-detection-observables';
-import {ManualChangeDetectionComponent} from './manual-change-detection';
+import { DefaultChangeDetectionComponent } from './default-change-detection';
+import { OnPushChangeDetectionComponent } from './on-push-change-detection';
+import { OnPushChangeDetectionObservablesComponent } from './on-push-change-detection-observables';
+import { ManualChangeDetectionComponent } from './manual-change-detection';
+import { Subject } from 'rxjs';
 
 @Component({
     selector: 'cd-demos-app',
@@ -15,10 +15,11 @@ import {ManualChangeDetectionComponent} from './manual-change-detection';
     encapsulation: ViewEncapsulation.None,
 })
 export class CdDemosAppComponent implements AfterViewChecked {
-    @ViewChild(DefaultChangeDetectionComponent) defaultChangeDetectionCmp: DefaultChangeDetectionComponent;
-    @ViewChild(OnPushChangeDetectionComponent) onPushChangeDetectionCmp: OnPushChangeDetectionComponent;
-    @ViewChild(OnPushChangeDetectionObservablesComponent) onPushChangeDetectionObservablesCmp: OnPushChangeDetectionObservablesComponent;
-    @ViewChild(ManualChangeDetectionComponent) manualChangeDetectionCmp: ManualChangeDetectionComponent;
+    @ViewChild(DefaultChangeDetectionComponent, { static: false }) defaultChangeDetectionCmp: DefaultChangeDetectionComponent;
+    @ViewChild(OnPushChangeDetectionComponent, { static: false }) onPushChangeDetectionCmp: OnPushChangeDetectionComponent;
+    @ViewChild(OnPushChangeDetectionObservablesComponent, { static: false })
+    onPushChangeDetectionObservablesCmp: OnPushChangeDetectionObservablesComponent;
+    @ViewChild(ManualChangeDetectionComponent, { static: false }) manualChangeDetectionCmp: ManualChangeDetectionComponent;
 
     notifier: Subject<any> = new Subject();
 

@@ -2,7 +2,7 @@
 // tslint:disable:component-class-suffix
 
 import {Component} from '@angular/core';
-import {Subject} from 'rxjs/Rx';
+import {Subject} from 'rxjs';
 
 @Component({
     selector: 'manual-cd',
@@ -18,7 +18,7 @@ import {Subject} from 'rxjs/Rx';
         </ol>
 
         <div>
-            <button (click)="null">Trigger Change Detection</button>
+            <button (click)="null" style="margin-right: 2em">Trigger Change Detection</button>
             <label for="toggle">
                 <input id="toggle" #attach type="checkbox" (click)="attachOrDetachChangeDetector(attach.checked)">
                 Attach/Detach Change Detector
