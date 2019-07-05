@@ -36,6 +36,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref": "https://dpkrwt.github.io/Angular-Change-Detection/cd-demos/dist/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
